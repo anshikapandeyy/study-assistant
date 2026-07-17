@@ -1,6 +1,6 @@
 
 export async function generateStudyMaterials({ notes, topic, signal }) {
-  const url = 'http://localhost:3001/api/generate';
+  const url = "https://study-assistant-api-tkyg.onrender.com/api/generate";
 
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 30000);
