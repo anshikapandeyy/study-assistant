@@ -12,6 +12,11 @@ app.use(express.json());
 const PORT = process.env.PORT || 3001;
 
 // Initialize GenAI
+// app.get("/", (req, res) => {
+//   res.json({
+//     status: "Study Assistant API is running 🚀"
+//   });
+// });
 const apiKey = process.env.GEMINI_API_KEY;
 const isMockMode = !apiKey || apiKey.trim() === '' || apiKey.includes('your_gemini_api_key_here');
 
@@ -191,7 +196,7 @@ ${inputContent}
 
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-lite',
+      model: 'models/gemini-2.5-flash',
       contents: prompt,
       config: {
         responseMimeType: 'application/json',
